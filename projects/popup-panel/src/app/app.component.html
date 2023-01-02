@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Google Default Account</h1>
+  <div class="center">
+    <div>
+      <div class="row">
+        <img class="icon" src="./assets/meet.png">
+        <input type="number" [(ngModel)]="meet" (change)="onConfigChange()">
+      </div>
+      <div class="row">
+        <img class="icon" src="./assets/google-photos.png">
+        <input type="number" [(ngModel)]="photo" (change)="onConfigChange()">
+      </div>
+      <div class="row">
+        <img class="icon" src="./assets/gmail.png">
+        <input type="number" [(ngModel)]="mail" (change)="onConfigChange()">
+      </div>
+      <div class="row">
+        <img class="icon" src="./assets/google-drive.png">
+        <input type="number" [(ngModel)]="drive" (change)="onConfigChange()">
+      </div>
+    </div>
+  </div>
+  <p>Set default account index, eg: 1, 2, 3...</p>
+</div>

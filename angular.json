@@ -3,5 +3,105 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "popup-panel": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "projects/popup-panel",
+      "sourceRoot": "projects/popup-panel/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/popup-panel",
+            "index": "projects/popup-panel/src/index.html",
+            "main": "projects/popup-panel/src/main.ts",
+            "polyfills": "projects/popup-panel/src/polyfills.ts",
+            "tsConfig": "projects/popup-panel/tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/popup-panel/src/favicon.ico",
+              "projects/popup-panel/src/assets"
+            ],
+            "styles": [
+              "projects/popup-panel/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/popup-panel/src/environments/environment.ts",
+                  "with": "projects/popup-panel/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "popup-panel:build:production"
+            },
+            "development": {
+              "browserTarget": "popup-panel:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "popup-panel:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/popup-panel/src/test.ts",
+            "polyfills": "projects/popup-panel/src/polyfills.ts",
+            "tsConfig": "projects/popup-panel/tsconfig.spec.json",
+            "karmaConfig": "projects/popup-panel/karma.conf.js",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/popup-panel/src/favicon.ico",
+              "projects/popup-panel/src/assets"
+            ],
+            "styles": [
+              "projects/popup-panel/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
   }
 }
