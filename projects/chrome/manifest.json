@@ -1,0 +1,17 @@
+{
+  "name": "Google Default Account",
+  "version": "0.0.1",
+  "description": "Automatically redirect google service to default account",
+  "manifest_version": 3,
+  "permissions": [
+      "storage",
+      "webNavigation"
+  ],
+  "action": {
+      "default_popup": "popup-panel/index.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
