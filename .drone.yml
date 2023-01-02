@@ -1,0 +1,43 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+platform:
+  os: linux
+  arch: arm64
+
+trigger:
+  event:
+    - tag
+
+clone:
+  depth: 1
+
+steps:
+  - name: build
+    image: node:14.17.6-buster-slim
+    commands:
+      - npm install
+      - npm run build
+      - tar zcvf dist.tar.gz dist
+      - apt update
+      - apt install zip -y
+      - zip -r dist.zip dist
+
+  - name: publish
+    image: plugins/github-release
+    settings:
+      api_key:
+        from_secret: github_api_token
+      files:
+        - dist.tar.gz
+        - dist.zip
+      title: ${DRONE_TAG}
+
+  - name: slack-notify
+    image: plugins/slack
+    settings:
+      webhook:
+        from_secret: slack_webhook
+      channel: drone-ci
