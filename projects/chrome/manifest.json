@@ -1,6 +1,6 @@
 {
   "name": "Google Default Account",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Automatically redirect google service to default account",
   "manifest_version": 3,
   "permissions": [
