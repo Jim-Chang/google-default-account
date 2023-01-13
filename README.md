@@ -1,27 +1,28 @@
-# GoogleDefaultAccount
+# Google Default Account
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+This extension is designed for users who work with multiple Google accounts and want to set a default account for these services, specifically for Google Meet.
+Whether the primary Google account you are logged in to, this extension allows you to pick a default account to use for Google Meet, Gmail, Google Drive and Google Photos.
+With this extension, you can easily switch between your personal and work accounts without annoying switching every time.
 
-## Development server
+You can install from [Chrome Extension Store](https://chrome.google.com/webstore/detail/njbmhlokbhcncpcjakgkacnlfkimomka).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## How to develop
 
-## Code scaffolding
+Switch to project root directory and enter following commands in console:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install
+npm run watch
+```
 
-## Build
+After the library is installed and built, go to Chrome extension settings page and click `Load unpacked` in top left corner. In dialog box, select `dist` folder in project root directory.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## How to compile for production
 
-## Running unit tests
+In project root directory, run following command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm run build
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The compiled result for production environment can be found in `dist` folder.
