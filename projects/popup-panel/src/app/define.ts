@@ -3,4 +3,5 @@ export enum Service {
   Photo = 'Photo',
   Mail = 'Mail',
   Drive = 'Drive',
+  Youtube = 'Youtube',
 }

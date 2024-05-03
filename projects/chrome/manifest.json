@@ -1,6 +1,6 @@
 {
-  "name": "Google Default Account",
-  "version": "0.0.2",
+  "name": "Google Default Account - FORK (toja83)",
+  "version": "0.0.3",
   "description": "Automatically redirect google service to default account",
   "manifest_version": 3,
   "permissions": [
