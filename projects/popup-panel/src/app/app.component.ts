@@ -14,6 +14,7 @@ export class AppComponent {
   photo: string | null;
   mail: string | null;
   drive: string | null;
+  youtube: string | null;
 
   constructor(private configService: ConfigService) {
     this.configService.loadAllConfig$().subscribe((cfg) => {
@@ -21,6 +22,7 @@ export class AppComponent {
       this.photo = cfg[Service.Photo] ?? null;
       this.mail = cfg[Service.Mail] ?? null;
       this.drive = cfg[Service.Drive] ?? null;
+      this.youtube = cfg[Service.Youtube] ?? null;
     });
   }
 
@@ -31,6 +33,7 @@ export class AppComponent {
         [Service.Photo]: empty2null(this.photo),
         [Service.Mail]: empty2null(this.mail),
         [Service.Drive]: empty2null(this.drive),
+        [Service.Youtube]: empty2null(this.youtube),
       })
       .subscribe();
   }
